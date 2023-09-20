@@ -31,14 +31,15 @@ export class StudentTable extends Component{
                     <th>Address</th>
                     </tr>
 
-                        {arr.map(arrStudent=>(
+                        {arr.map(arrStudent=>{
+                           return (
                             <tr>
-                                <td>{arrStudent.id}</td>
-                                <td>{arrStudent.name}</td>
-                                <td>{arrStudent.age}</td>
-                                <td>{arrStudent.address}</td>
-                            </tr>
-                            )
+                            <td>{arrStudent.id}</td>
+                <td>{arrStudent.name}</td>
+                <td>{arrStudent.age}</td>
+                <td>{arrStudent.address}</td>
+            </tr>)
+    }
                         )}
                 </table>
             </>
