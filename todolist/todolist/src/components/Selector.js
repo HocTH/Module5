@@ -1,4 +1,5 @@
 import {useState,useEffect} from "react";
+import React from "react";
 function Selector() {
     let [selected,setSelected] = useState(0);
     let [valueSelected,setValueSelected]  = useState("")

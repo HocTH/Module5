@@ -1,4 +1,4 @@
-import {Component} from "react";
+import React,{Component} from "react";
 
 const arr = [
     {
@@ -19,28 +19,31 @@ const arr = [
         age: 68,
         address: "Binh Thuan"
     }]
-export class StudentTable extends Component{
-    render(){
-        return(
+
+export class StudentTable extends Component {
+    render() {
+        return (
             <>
-                <table className = "table">
+                <table className="table">
                     <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Address</th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Address</th>
+                        <th>Action</th>
                     </tr>
 
-                        {arr.map(arrStudent=>{
-                           return (
-                            <tr>
-                            <td>{arrStudent.id}</td>
-                <td>{arrStudent.name}</td>
-                <td>{arrStudent.age}</td>
-                <td>{arrStudent.address}</td>
-            </tr>)
-    }
-                        )}
+                    {arr.map(arrStudent => {
+                            return (
+                                <tr>
+                                    <td>{arrStudent.id}</td>
+                                    <td>{arrStudent.name}</td>
+                                    <td>{arrStudent.age}</td>
+                                    <td>{arrStudent.address}</td>
+                                    <td>Delete</td>
+                                </tr>)
+                        }
+                    )}
                 </table>
             </>
         )

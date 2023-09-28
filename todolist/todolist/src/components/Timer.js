@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import React from "react";
 
 export function Timer() {
     let [count, setCount] = useState(15)
@@ -7,7 +8,6 @@ export function Timer() {
             setCount(count - 1)
         } else {
             alert("Time's up")
-
         }
     }, 1000)
     return (

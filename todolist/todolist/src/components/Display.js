@@ -1,5 +1,6 @@
 import {Component} from "react";
 import {Hello} from "./Hello";
+import React from "react";
 
 export class Display extends Component{
     constructor(props) {

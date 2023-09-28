@@ -1,46 +1,22 @@
 import {useState, useEffect} from "react";
+import React from "react";
+
+const carModel = ["KIA", "HONDA", "MAZDA", "FERRARI", "LA DALAT "];
+const color = ["Blue", "White", "Red", "Pink"]
 
 export function CarSelector() {
-    let [carSelected, setCarSelected] = useState(0)
-    let [valueCar, setValueCar] = useState("Honda")
-    let [colorSelected,setColorSelected] = useState(0)
-    let [valueColor,setValueColor] = useState("Black")
+    const [car, setCar] = useState({car: carModel[0], color: color[0]})
     const choice = (e) => {
-        setCarSelected(e.target.value)
+        setCar(prevState => ({
+            ...prevState,car: e.target.value
+        }))
     }
-    useEffect(() => {
-        switch (carSelected) {
-            case "0":
-                setValueCar("Honda");
-                break;
-
-            case "1":
-                setValueCar("KIA");
-                break;
-            case "2":
-                setValueCar("BMW");
-                break;
-            default:
-        }
-    }, [carSelected])
-    const choiceColor = (e) =>{
-        setColorSelected(e.target.value)
+    const choiceColor = (e) => {
+        setCar(prevState => ({
+            ...prevState,color: e.target.value
+        }))
     }
-    useEffect(()=>{
-        switch (colorSelected) {
-            case "0":
-                setValueColor("Black");
-                break;
-            case "1":
-                setValueColor("White");
-                break;
-            case "2":
-                setValueColor("Red");
-                break;
-            default:
-        }
 
-    },[colorSelected])
     return (
         <>
             <h3>Select your car</h3>
@@ -49,22 +25,29 @@ export function CarSelector() {
                 choice(e)
             }
             }>
-                <option value="0">Honda</option>
-                <option value="1">KIA</option>
-                <option value="2">BMW</option>
+                {carModel.map((car, index) => {
+                    return (
+                        <option value={car}>{car}</option>
+                    )
+                })}
+
             </select>
-            <br/>
-            <span>Select color for car :</span>
+
+            <span>Select a color :</span>
             <select onChange={e => {
                 choiceColor(e)
             }
             }>
-                <option value="0">Black</option>
-                <option value="1">White</option>
-                <option value="2">Red</option>
+                {color.map((color, index) => {
+                    return (
+                        <option value={color}>{color}</option>
+                    )
+                })}
+
             </select>
+
             <h2>
-                You selected a {valueCar}-{valueColor}
+                You selected a {car.car}-{car.color}
             </h2>
         </>
     )
