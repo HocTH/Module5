@@ -184,8 +184,6 @@ export function Declaration() {
                     )
                     )
                 }
-
-
             </Formik>
         </>
     )

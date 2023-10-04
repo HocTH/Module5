@@ -3,6 +3,7 @@ import * as Yup from 'yup'
 import {Dna} from "react-loader-spinner";
 import {toast, ToastContainer} from "react-toastify";
 import React from "react";
+import 'react-toastify/dist/ReactToastify.css'
 
 export function Create() {
     return (

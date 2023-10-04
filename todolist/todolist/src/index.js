@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ToDoList from "./ToDoList";
+import ToDoList from "./todolist/ToDoList";
 import {BrowserRouter} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 

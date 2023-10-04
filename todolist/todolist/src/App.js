@@ -2,13 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import {NavLink, Route, Router, Routes} from "react-router-dom";
-import {List} from "./components/crud/List";
-import {Create} from "./components/crud/Create";
-import {Update} from "./components/crud/Update";
-import {NotFound} from "./components/crud/NotFound";
-import {FormContact} from "./components/router/FormContact";
-import {Declaration} from "./components/router/Declaration";
-
+import {SimpleForm} from "./components/myself/SimpleForm";
+import {List1} from "./components/myself/List1";
+import {Update1} from "./components/myself/Update1";
+import {Table} from "./components/wander/SoLonely";
+import {ProfileCard} from "./components/wander/ProfileCard";
+import {AddComponent} from "./components/wander/AddComponent";
+import AddComponentFunction from "./components/wander/AddComponentFunction";
+import {Decrease} from "./components/wander/Decrease";
+import {City} from "./components/wander/City";
+import {ListToDo} from "./todolist/ToDo";
+import {ListBook} from "./components/Library/BookList";
+import {CreateBook} from "./components/Library/CreateBook";
 function App() {
   return(
       // <>
@@ -21,10 +26,25 @@ function App() {
       //         <Route path="/*" element={<NotFound/>}></Route>
       //     </Routes>
       // </>
+      // <>
+      //     <NavLink to="/">Home</NavLink>
+      //     <NavLink to="/login">Login</NavLink>
+      //     <Routes>
+      //         <Route path="/"  element={<List1/>}></Route>
+      //         <Route path="/login"  element={<SimpleForm/>}></Route>
+      //         <Route path="/update/:id"  element={<Update1/>}></Route>
+      //     </Routes>
+      // </>
       <>
-      <Declaration/>
-      </>
+          <NavLink to="/CreateBook">Create</NavLink>
+          <Routes>
+              <Route path="/" element={<ListBook/>}></Route>
+              <Route path="/CreateBook" element={<CreateBook/>}></Route>
+              {/*<Route path="/update/:id" element={<UpdateBook/>}></Route>*/}
+              {/*<Route path="/delete/:id" element={<DeleteBook/>}></Route>*/}
+          </Routes>
 
+      </>
       )
 }
 export default App;

@@ -1,0 +1,94 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "user": "json-server",
+      "password": "typicode"
+    },
+    {
+      "id": 2,
+      "user": "json-server",
+      "password": "typicode"
+    },
+    {
+      "id": 3,
+      "user": "json-server",
+      "password": "typicode"
+    },
+    {
+      "user": "Nguyen Thi Tinh",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "user": "Nguyen Thi Tinh",
+      "password": "123456",
+      "id": 5
+    }
+  ],
+  "wanders": [
+    {
+      "id": 1,
+      "company": "Thaco",
+      "contact": "Wander",
+      "home": "Viet nam"
+    },
+    {
+      "id": 2,
+      "company": "BMW",
+      "contact": "Henry",
+      "home": "USA"
+    },
+    {
+      "id": 3,
+      "company": "Dell",
+      "contact": "Tom",
+      "home": "French"
+    }
+  ],
+  "todo": [
+    {
+      "id": 1,
+      "content": "Hoc tieng anh"
+    },
+    {
+      "id": 2,
+      "content": "Hoc tieng Nhat"
+    },
+    {
+      "id": 3,
+      "content": "Hoc tieng LAo"
+    },
+    {
+      "id": 4,
+      "content": "Chỉ số nghành chưa được cập nhật"
+    },
+    {
+      "id": 5,
+      "content": "Chỉ số nghành chưa được cập nhật"
+    },
+    {
+      "id": 6,
+      "content": "132"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Thaco",
+      "quantity": 101
+    },
+    {
+      "id": 2,
+      "title": "BMW",
+      "quantity": 10
+    },
+    {
+      "title": "Nguyen Thi Tinh",
+      "quantity": "10",
+      "tittle": "sdfsd1",
+      "quatity": "20",
+      "id": 3
+    }
+  ]
+}
