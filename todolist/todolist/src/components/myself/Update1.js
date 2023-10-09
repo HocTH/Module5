@@ -7,5 +7,6 @@ export function Update1() {
         <h1>
             StudentID:{param.id}
         </h1>
+
     )
 }

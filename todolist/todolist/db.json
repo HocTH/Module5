@@ -74,21 +74,43 @@
   ],
   "books": [
     {
-      "id": 1,
-      "title": "Thaco",
-      "quantity": 101
+      "id": 5
     },
     {
-      "id": 2,
-      "title": "BMW",
-      "quantity": 10
+      "id": 6
     },
     {
-      "title": "Nguyen Thi Tinh",
+      "id": 7
+    },
+    {
+      "title": "Nguyen Thi Tinh1",
       "quantity": "10",
-      "tittle": "sdfsd1",
-      "quatity": "20",
-      "id": 3
+      "id": 8
+    },
+    {
+      "title": "Nguyen Thi Tinh1",
+      "quantity": "10",
+      "id": 9
+    },
+    {
+      "title": "Nguyen Thi Tinh1",
+      "quantity": "100000",
+      "id": 10
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Nguyen Thi Tinh",
+      "email": "nguyenthitinh1998@gmail.comdf",
+      "phone": "0931960053",
+      "id": 1
+    },
+    {
+      "image": null,
+      "name": "HOC LE",
+      "email": "hoclephuoc1998@gmail.com",
+      "phone": "0543684124",
+      "id": 2
     }
   ]
 }

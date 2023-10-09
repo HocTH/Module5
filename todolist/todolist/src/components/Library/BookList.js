@@ -3,7 +3,9 @@ import React from "react";
 import * as bookService from "./service/BookService"
 import axios from "axios";
 import {NavLink} from "react-router-dom";
+import {toast} from "react-toastify";
 export function ListBook() {
+
     const [books,setBooks] = useState([])
     useEffect(()=>{
      const fetchApi = async ()=>{
@@ -12,6 +14,15 @@ export function ListBook() {
      }
      fetchApi()
     },[])
+    const handleDelete =(id) =>{
+        try{
+            axios.delete("http://localhost:8080/books/"+id)
+            setBooks(prevState => prevState.filter((book)=> book.id!== id ))
+            toast(' Delete book successfully!!!!');
+        }catch (e) {
+            console.log(e)
+        }
+    }
     return(
         <>
             <h1>
@@ -32,7 +43,8 @@ export function ListBook() {
                         <td>{book.quantity}</td>
                         <td>
                             <NavLink to={`/update/${book.id}`} className="btn btn-primary">Edit</NavLink>
-                            <NavLink to={`/delete/${book.id}`} className='btn btn-danger'>Delete</NavLink>
+                            <button onClick={e => handleDelete(book.id)} className="btn btn-danger">Delete</button>
+
                         </td>
                     </tr>)
                 )}

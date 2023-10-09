@@ -1,19 +1,33 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import {toast, ToastContainer} from "react-toastify";
 import * as Yup from 'yup'
 import {Bars, Dna} from "react-loader-spinner";
 import 'react-toastify/dist/ReactToastify.css'
 import * as bookService from "./service/BookService"
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
-export function CreateBook() {
+export function Update() {
+    const {id} = useParams();
     const navigate = useNavigate();
-    return (
+    const [book, setBook] = useState({
+        title:"",
+        quantity:""
+    });
+    useEffect(()=>{
+        const fetchApi = async ()=>{
+          const result = await bookService.findById(id)
+              console.log(result)
+            setBook(result)
+        }
+        fetchApi()
+    },[])
+
+    return book.title !=="" ?  (
         <>
             <Formik initialValues={{
-                title: "Nguyen Thi Tinh",
-                quantity: "10"
+                title: book.title,
+                quantity: book.quantity
 
             }}
                     validationSchema={
@@ -22,16 +36,15 @@ export function CreateBook() {
                             quantity: Yup.string().required("Bat buoc phai nhap"),
                         })
                     }
-                    onSubmit={(values,{setSubmitting}) =>{
+                    onSubmit={(values, {setSubmitting}) => {
                         console.log(values)
-                        const create = async ()=>{
-                            setSubmitting (false)
-                            values.title = values.title + 1;
-                            await bookService.save(values)
+                        const update = async () => {
+                            setSubmitting(false)
+                            await bookService.update(id,values)
                             navigate("/")
-                            toast(`Book ${values.user} create ok`)
+                            toast(`Book ${values.user} update ok`)
                         }
-                        create()
+                        update()
                     }
                     }>
                 {
@@ -40,12 +53,12 @@ export function CreateBook() {
                             <h2>Sign up</h2>
                             <Form>
                                 <div className="mb-2">
-                                    <label htmlFor="title" className="form-label">Title</label>
+                                    <label htmlFor="title" className="form-label">Tittle</label>
                                     <Field type="text" className="form-control" id="title" name="title"/>
                                     <ErrorMessage name="title" component="span" className="text-danger"/>
                                 </div>
                                 <div className="mb-2">
-                                    <label htmlFor="quantity" className="form-label">Quatity</label>
+                                    <label htmlFor="quantity" className="form-label">Quantity</label>
                                     <Field type="text" className="form-control" id="quantity" name="quantity"/>
                                     <ErrorMessage name="quantity" component="span" className="text-danger"/>
                                 </div>
@@ -67,8 +80,7 @@ export function CreateBook() {
                         </div>)
                 }
             </Formik>
-            <ToastContainer/>
         </>
-    )
+    ):""
 
 }
