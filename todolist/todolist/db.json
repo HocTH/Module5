@@ -74,15 +74,6 @@
   ],
   "books": [
     {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
       "title": "Nguyen Thi Tinh1",
       "quantity": "10",
       "id": 8
@@ -90,12 +81,17 @@
     {
       "title": "Nguyen Thi Tinh1",
       "quantity": "10",
-      "id": 9
+      "id": 12
     },
     {
-      "title": "Nguyen Thi Tinh1",
-      "quantity": "100000",
-      "id": 10
+      "title": "tinh",
+      "quantity": "10",
+      "id": 13
+    },
+    {
+      "title": "Hoc1",
+      "quantity": "10",
+      "id": 14
     }
   ],
   "contacts": [

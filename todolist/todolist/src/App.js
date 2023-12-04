@@ -40,21 +40,21 @@ function App() {
       //         <Route path="/update/:id"  element={<Update1/>}></Route>
       //     </Routes>
       // </>
-      // <>
-      //     <NavLink to="/CreateBook">Create</NavLink>
-      //     <Routes>
-      //         <Route path="/" element={<ListBook/>}></Route>
-      //         <Route path="/CreateBook" element={<CreateBook/>}></Route>
-      //         <Route path="/update/:id" element={<Update/>}></Route>
-      //         {/*<Route path="/delete/:id" element={<DeleteBook/>}></Route>*/}
-      //     </Routes>
-      //     <ToastContainer/>
-      // </>
-      <Routes>
-          <Route path="/" element={<ListContact/>}></Route>
-          <Route path="/create" element={<CreateContact/>}></Route>
-          <Route path="/update/:id" element={<UpdateContact/>}></Route>
-      </Routes>
+      <>
+          <NavLink to="/CreateBook">Create</NavLink>
+          <Routes>
+              <Route path="/" element={<ListBook/>}></Route>
+              <Route path="/CreateBook" element={<CreateBook/>}></Route>
+              <Route path="/update/:id" element={<Update/>}></Route>
+              {/*<Route path="/delete/:id" element={<DeleteBook/>}></Route>*/}
+          </Routes>
+          <ToastContainer/>
+      </>
+      // <Routes>
+      //     <Route path="/" element={<ListContact/>}></Route>
+      //     <Route path="/create" element={<CreateContact/>}></Route>
+      //     <Route path="/update/:id" element={<UpdateContact/>}></Route>
+      // </Routes>
       )
 }
 export default App;

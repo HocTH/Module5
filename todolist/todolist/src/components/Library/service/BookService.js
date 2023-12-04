@@ -1,7 +1,8 @@
 import axios from "axios";
-export const findAll = async ()=>{
+let limit = 4;
+export const findAll = async (currentIndex)=>{
     try{
-        const result = await axios.get("http://localhost:8080/books");
+        const result = await axios.get(`http://localhost:8080/books?_page=1&_limit=${limit}`);
         return result.data;
     }catch (error){
         if (error.response) {
